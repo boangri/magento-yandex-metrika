@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Boangri_YandexMetrika>
+            <version>0.0.1</version>
+        </Boangri_YandexMetrika>
+    </modules>
+    <global>
+        <blocks>
+            <boangri_yandexmetrika>
+                <class>Boangri_YandexMetrika_Block</class>
+            </boangri_yandexmetrika>
+        </blocks>
+        <helpers>
+            <boangri_yandexmetrika>
+                <class>Boangri_YandexMetrika_Helper</class>
+            </boangri_yandexmetrika>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <boangri_yandexmetrika module="Boangri_YandexMetrika">
+                    <file>boangri_yandexmetrika.xml</file>
+                </boangri_yandexmetrika>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Boangri_YandexMetrika after="Mage_Adminhtml">Boangri_YandexMetrika</Boangri_YandexMetrika>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>      
+</config>
+    
+    
