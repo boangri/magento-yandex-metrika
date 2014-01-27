@@ -1,0 +1,19 @@
+/**
+ * Boangri YandexMetrika admin module
+ *
+ * @category Boangri
+ * @package Boangri_YandexMetrika
+ * @copyright Copyright (c) 2014 Cyberhull LLC (www.cyberhull.com)
+ * @author Boris Gribovskiy (boris.gribovskiy@cyberhull.com)
+ */
+ 
+### Module Files Outside this Directory
+
+# Module XML File
+app/etc/modules/Boangri_YandexMetrika.xml
+
+# Layout Files
+app/design/frontend/enterprise/boangri/layout/boangri_yandexmetrika.xml
+
+# Template Files
+app/design/frontend/enterprise/boangri/template/boangri_yandexmetrika/index.phtml

@@ -18,10 +18,32 @@
 <config>
     <modules>
         <Boangri_YandexMetrika>
-            <version>0.0.1</version>
+            <version>0.1.0</version>
         </Boangri_YandexMetrika>
     </modules>
     <global>
+        <models>
+            <boangri_yandexmetrika>
+                <class>Boangri_YandexMetrika_Model</class>
+                <resourceModel>yandexmetrika_resource</resourceModel>
+            </boangri_yandexmetrika>
+            <boangri_yandexmetrika_resource>
+                <class>Boangri_YandexMetrika_Model_Resource</class>
+                <entities>
+                    <counter>
+                        <table>boangri_ym_counters</table>
+                    </counter>
+                </entities>
+            </boangri_yandexmetrika_resource>
+        </models>
+        <resources>
+            <boangri_yandexmetrika_setup>
+                <setup>
+                    <module>Boangri_YandexMetrika</module>
+                    <class>Boangri_YandexMetrika_Model_Resource_Setup</class>
+                </setup>
+            </boangri_yandexmetrika_setup>
+        </resources>
         <blocks>
             <boangri_yandexmetrika>
                 <class>Boangri_YandexMetrika_Block</class>
