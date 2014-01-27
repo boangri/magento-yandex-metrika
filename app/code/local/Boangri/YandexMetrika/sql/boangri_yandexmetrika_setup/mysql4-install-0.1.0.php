@@ -10,7 +10,7 @@
  * @author Boris Gribovskiy (boris.gribovskiy@cyberhull.com)
  */
  
-echo 'Running This Upgrade: '.get_class($this)."\n <br /> \n"; die;
+//echo 'Running This Upgrade: '.get_class($this)."\n <br /> \n"; die;
 $installer = $this;
 $installer->startSetup();
 $installer->run("

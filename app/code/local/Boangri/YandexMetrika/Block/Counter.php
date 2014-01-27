@@ -27,6 +27,15 @@ class Boangri_YandexMetrika_Block_Counter extends Mage_Core_Block_Template
      */
     public function __construct()
     {
+        $counter = Mage::getModel('boangri_yandexmetrika/counter')->load(1);
+        if(!$counter) {
+            $this->_counterBody = 'Counter not set!';
+            return;
+        }
+        $data = $counter->getData();
+        $this->_counterBody = $data['counter'];
+        
+        /*
         $this->_counterBody = <<<EOT
 <!-- Yandex.Metrika informer -->
 <a href="http://metrika.yandex.ru/stat/?id=23733337&amp;from=informer"
@@ -61,7 +70,7 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 <noscript><div><img src="//mc.yandex.ru/watch/23733337" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->                
 EOT;
-    
+        */
     }
     
     /**

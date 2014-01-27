@@ -25,7 +25,7 @@
         <models>
             <boangri_yandexmetrika>
                 <class>Boangri_YandexMetrika_Model</class>
-                <resourceModel>yandexmetrika_resource</resourceModel>
+                <resourceModel>boangri_yandexmetrika_resource</resourceModel>
             </boangri_yandexmetrika>
             <boangri_yandexmetrika_resource>
                 <class>Boangri_YandexMetrika_Model_Resource</class>

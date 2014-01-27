@@ -24,7 +24,7 @@
                 <yandexmetrika>
                     <title>Yandex Metrika</title>
                     <sort_order>1</sort_order>
-                    <action>adminhtml/yandexmetrika/index</action>
+                    <action>adminhtml/yandexmetrika/edit</action>
                 </yandexmetrika>
                 <!--
                 <item2>
