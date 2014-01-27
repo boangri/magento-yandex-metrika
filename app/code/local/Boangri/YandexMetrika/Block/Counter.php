@@ -1,14 +1,30 @@
 <?php
-
 /**
- * Description of Counter
- *
- * @author Boris.Gribovskiy
+ * Yandex Metrika module
+ * 
+ * @category Boangri
+ * @package Boangri_YandexMetrika
+ * @copyright Copyright (c) 2014 Cyberhull LLC (www.cyberhull.com)
+ * @author Boris Gribovskiy (boris.gribovskiy@cyberhull.com)
+ */
+/**
+ * Block for output of YandexMetrika counter
+ * 
+ * @category Boangri
+ * @package Boangri_YandexMetrika  
  */
 class Boangri_YandexMetrika_Block_Counter extends Mage_Core_Block_Template
 {
+    /**
+     * YandexMetrika counter body
+     * 
+     * @var type String
+     */
     protected $_counterBody;
     
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->_counterBody = <<<EOT
@@ -47,7 +63,12 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 EOT;
     
     }
-                
+    
+    /**
+     * Get current date (for testing purposes only)
+     * 
+     * @return type String
+     */
     public function getDate()
     {
         $date = date('Y-m-d');
