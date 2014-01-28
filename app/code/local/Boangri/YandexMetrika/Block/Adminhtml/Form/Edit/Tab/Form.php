@@ -22,21 +22,21 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
      */
     protected function _prepareForm()
     {
-        $data = Mage::registry('weblog_post');
-        $id = isset($data['blogpost_id']) ? $data['blogpost_id'] : 0;
+        $data = Mage::registry('boangri_counter');
+        $id = isset($data['website_id']) ? $data['website_id'] : 1;
         $form = new Varien_Data_Form();
         $this->setForm($form);
         $fieldset = $form->addFieldset('form_form', 
-                array('legend'=>Mage::helper('weblog')->__('Main data')));
-        
+                array('legend'=>Mage::helper('boangri_yandexmetrika')->__('Code of the counter')));
+        /*
         $fieldset->addField('title', 'text', array(
-            'label'     => Mage::helper('weblog')->__('Title'),
+            'label'     => Mage::helper('boangri_yandexmetrika')->__('Title'),
             'class'     => 'required-entry',
             'required'  => true,
             'name'      => 'title',
             'value'     => $data['title'],
         ));
-        
+        */
         $fieldset->addField('hidden', 'hidden', array(
             'name'      => 'id',
             'value'     => $id ,
@@ -44,7 +44,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 /*  
         // Password 
         $fieldset->addField('password', 'password', array(
-          'label'     => Mage::helper('weblog')->__('Password'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Password'),
           'class'     => 'required-entry',
           'required'  => true,
           'name'      => 'title',
@@ -60,7 +60,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
         
         // Text 
         $fieldset->addField('title3', 'text', array(
-          'label'     => Mage::helper('weblog')->__('Title3'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Title3'),
           'class'     => 'required-entry',
           'required'  => false,
           'name'      => 'title',
@@ -76,7 +76,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
         
         // time 
         $fieldset->addField('time', 'time', array(
-          'label'     => Mage::helper('weblog')->__('Time'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Time'),
           'class'     => 'required-entry',
           'required'  => true,
           'name'      => 'title',
@@ -91,11 +91,11 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 */
         // TextArea 
         $fieldset->addField('textarea', 'textarea', array(
-            'label'     => Mage::helper('weblog')->__('Content Of Your Post'),
+            'label'     => Mage::helper('boangri_yandexmetrika')->__('Code of the counter'),
             'class'     => 'required-entry',
             'required'  => true,
             'name'      => 'content',
-            'value'     => $data['post'],
+            'value'     => $data['counter'],
           //'onclick' => "",
           //'onchange' => "",
           //'value'  => '',
@@ -107,7 +107,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 /*
         // Dropdown 
         $fieldset->addField('select', 'select', array(
-          'label'     => Mage::helper('weblog')->__('Select'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Select'),
           'class'     => 'required-entry',
           'required'  => true,
           'name'      => 'title',
@@ -123,7 +123,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 
         // Radio button 
         $fieldset->addField('radio', 'radio', array(
-          'label'     => Mage::helper('weblog')->__('Radio'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Radio'),
           'name'      => 'title',
           'onclick' => "",
           'onchange' => "",
@@ -136,7 +136,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
         
         // Radio buttons 
         $fieldset->addField('radio2', 'radios', array(
-          'label'     => Mage::helper('weblog')->__('Radios'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Radios'),
           'name'      => 'title',
           'onclick' => "",
           'onchange' => "",
@@ -154,12 +154,12 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 
         // Note 
         $fieldset->addField('note', 'note', array(
-          'text'     => Mage::helper('weblog')->__('Text Text'),
+          'text'     => Mage::helper('boangri_yandexmetrika')->__('Text Text'),
         ));
 
         // Link 
         $fieldset->addField('link', 'link', array(
-          'label'     => Mage::helper('weblog')->__('Link'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Link'),
           'style'   => "",
           'href' => 'www.excellencemagentoblog.com',
           'value'  => 'Magento Blog',
@@ -168,7 +168,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 
         // Label 
         $fieldset->addField('label', 'label', array(
-          'value'     => Mage::helper('weblog')->__('Label Text'),
+          'value'     => Mage::helper('boangri_yandexmetrika')->__('Label Text'),
         ));
         
         // Image upload 
@@ -178,7 +178,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 
         // File Upload 
         $fieldset->addField('file', 'file', array(
-          'label'     => Mage::helper('weblog')->__('Upload'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Upload'),
           'value'  => 'Uplaod',
           'disabled' => false,
           'readonly' => true,
@@ -188,7 +188,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
  * 
         // Date 
         $fieldset->addField('date', 'date', array(
-          'label'     => Mage::helper('weblog')->__('Date'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Date'),
           'after_element_html' => '<small>Date to post</small>',
           'tabindex' => 1,
           'image' => $this->getSkinUrl('images/grid-cal.gif'),
@@ -198,7 +198,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 
         // Checkbox 
         $fieldset->addField('checkbox', 'checkbox', array(
-          'label'     => Mage::helper('weblog')->__('Checkbox'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Checkbox'),
           'name'      => 'Checkbox',
           'checked' => false,
           'onclick' => "",
@@ -211,7 +211,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
 
         // Checkboxes 
         $fieldset->addField('checkboxes', 'checkboxes', array(
-          'label'     => Mage::helper('weblog')->__('Checkboxs'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Checkboxs'),
           'name'      => 'Checkbox',
           'values' => array(
                             array('value'=>'1','label'=>'Checkbox1'),
@@ -228,7 +228,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
         
         // Submit Button 
         $fieldset->addField('submit', 'submit', array(
-          'label'     => Mage::helper('weblog')->__('Submit'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Submit'),
           'required'  => true,
           'value'  => 'Submit post',
           'after_element_html' => '<small>Comments</small>',

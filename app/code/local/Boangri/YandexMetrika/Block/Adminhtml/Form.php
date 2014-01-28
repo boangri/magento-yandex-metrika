@@ -24,13 +24,13 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form
     {
         parent::__construct();
                   
-        $this->_objectId = 'blogpost_id';
-        $this->_blockGroup = 'weblog';
+        $this->_objectId = 'website_id';
+        $this->_blockGroup = 'boangri_yandexmetrika';
         $this->_controller = 'adminhtml_form';
          
-        $this->_updateButton('save', 'label', Mage::helper('weblog')->__('Save'));
+        $this->_updateButton('save', 'label', Mage::helper('boangri_yandexmetrika')->__('Save'));
         /*
-        $this->_updateButton('delete', 'label', Mage::helper('weblog')->__('Delete'));
+        $this->_updateButton('delete', 'label', Mage::helper('boangri_yandexmetrika')->__('Delete'));
          
         $this->_addButton('saveandcontinue', array(
             'label'     => Mage::helper('adminhtml')->__('Save And Continue Edit'),
@@ -47,6 +47,6 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form
      */
     public function getHeaderText()
     {
-        return Mage::helper('weblog')->__('Create new post');
+        return Mage::helper('boangri_yandexmetrika')->__('Edit Counter');
     }
 }

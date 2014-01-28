@@ -22,7 +22,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Grid extends Mage_Adminhtml_Blo
     public function __construct()
     {
         parent::__construct();
-        $this->setId('weblogGrid');
+        $this->setId('counterGrid');
         $this->setDefaultSort('id');
         $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
@@ -38,7 +38,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Grid extends Mage_Adminhtml_Blo
      */
     protected function _prepareCollection()
     {
-        $collection = Mage::getModel('weblog/blogpost')->getCollection();
+        $collection = Mage::getModel('boangri_yandexmetrika/counter')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -50,27 +50,27 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Grid extends Mage_Adminhtml_Blo
     protected function _prepareColumns()
     {
         $this->addColumn('id', array(
-          'header'    => Mage::helper('weblog')->__('ID'),
+          'header'    => Mage::helper('boangri_yandexmetrika')->__('ID'),
           'align'     =>'right',
           'width'     => '10px',
-          'index'     => 'blogpost_id',
+          'index'     => 'website_id',
         ));
  
         $this->addColumn('title', array(
-          'header'    => Mage::helper('weblog')->__('Title'),
+          'header'    => Mage::helper('boangri_yandexmetrika')->__('Title'),
           'align'     =>'left',
           'index'     => 'title',
           'width'     => '50px',
         ));
        
         $this->addColumn('content', array(
-            'header'    => Mage::helper('weblog')->__('Content'),
+            'header'    => Mage::helper('boangri_yandexmetrika')->__('Content'),
             'width'     => '150px',
             'index'     => 'post',
         ));
         
         $this->addColumn('dropdown', array(
-          'header'    => Mage::helper('weblog')->__('Post Type'),
+          'header'    => Mage::helper('boangri_yandexmetrika')->__('Post Type'),
           'width'     => '50px',  
           'align'     =>'left',
           'index'     => 'status',
@@ -79,19 +79,19 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Grid extends Mage_Adminhtml_Blo
         ));
         
         $this->addColumn('date', array(
-            'header'    => Mage::helper('weblog')->__('Date'),
+            'header'    => Mage::helper('boangri_yandexmetrika')->__('Date'),
             'width'     => '50px',
             'index'     => 'date',
         ));
         
         $this->addColumn('ts', array(
-            'header'    => Mage::helper('weblog')->__('Timestamp'),
+            'header'    => Mage::helper('boangri_yandexmetrika')->__('Timestamp'),
             'width'     => '50px',
             'index'     => 'timestamp',
         ));
            
-        $this->addExportType('*/*/exportCsv', Mage::helper('weblog')->__('CSV'));
-        $this->addExportType('*/*/exportXml', Mage::helper('weblog')->__('XML'));
+        $this->addExportType('*/*/exportCsv', Mage::helper('boangri_yandexmetrika')->__('CSV'));
+        $this->addExportType('*/*/exportXml', Mage::helper('boangri_yandexmetrika')->__('XML'));
        
         return parent::_prepareColumns();
     }
@@ -122,28 +122,28 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Grid extends Mage_Adminhtml_Blo
      */
     protected function _prepareMassaction()
     {
-        $this->setMassactionIdField('blogpost_id');
+        $this->setMassactionIdField('website_id');
         $this->getMassactionBlock()->setFormFieldName('id');
  
         $this->getMassactionBlock()->addItem('delete', array(
-             'label'    => Mage::helper('weblog')->__('Delete'),
+             'label'    => Mage::helper('boangri_yandexmetrika')->__('Delete'),
              'url'      => $this->getUrl('*/*/massDelete'),
-             'confirm'  => Mage::helper('weblog')->__('Are you sure?')
+             'confirm'  => Mage::helper('boangri_yandexmetrika')->__('Are you sure?')
         ));
  
         $statuses = array(1 => 'Draft', 2 => 'Published', 3 => 'Hidden');
-        // $statuses = Mage::getSingleton('weblog/status')->getOptionArray();
+        // $statuses = Mage::getSingleton('boangri_yandexmetrika/status')->getOptionArray();
  
         array_unshift($statuses, array('label'=>'', 'value'=>''));
         $this->getMassactionBlock()->addItem('status', array(
-             'label'=> Mage::helper('weblog')->__('Change status'),
+             'label'=> Mage::helper('boangri_yandexmetrika')->__('Change status'),
              'url'  => $this->getUrl('*/*/massStatus', array('_current'=>true)),
              'additional' => array(
                     'visibility' => array(
                          'name' => 'status',
                          'type' => 'select',
                          'class' => 'required-entry',
-                         'label' => Mage::helper('weblog')->__('Status'),
+                         'label' => Mage::helper('boangri_yandexmetrika')->__('Status'),
                          'values' => $statuses
         )
         )

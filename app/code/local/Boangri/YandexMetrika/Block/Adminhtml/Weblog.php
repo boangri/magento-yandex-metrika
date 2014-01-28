@@ -23,13 +23,13 @@ class Boangri_YandexMetrika_Block_Adminhtml_Weblog
     public function __construct()
     {
         $this->_controller = 'adminhtml_form';
-        $this->_blockGroup = 'weblog';
-        $this->_headerText = Mage::helper('weblog')->__('Post Manager');
-        $this->_addButtonLabel = Mage::helper('weblog')->__('Add Post');
+        $this->_blockGroup = 'boangri_yandexmetrika';
+        $this->_headerText = Mage::helper('boangri_yandexmetrika')->__('Post Manager');
+        $this->_addButtonLabel = Mage::helper('boangri_yandexmetrika')->__('Add Post');
         
         // Add a button
         //$this->_addButton('button1', array(
-        //    'label'     => Mage::helper('weblog')->__('Button Label1'),
+        //    'label'     => Mage::helper('boangri_yandexmetrika')->__('Button Label1'),
         //    'onclick'   => 'setLocation(\'' . $this->getUrl('*/*/button1') .'\')',
         //    'class'     => 'add',
         //));
