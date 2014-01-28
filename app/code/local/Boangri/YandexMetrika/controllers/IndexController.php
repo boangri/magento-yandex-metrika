@@ -13,7 +13,7 @@
  * @category Boangri
  * @package Boangri_YandexMetrika  
  */
-class Boangri_YandexMetrika_YandexmetrikaController extends Mage_Adminhtml_Controller_Action
+class Boangri_YandexMetrika_IndexController extends Mage_Adminhtml_Controller_Action
 {
     /**
      * index action
