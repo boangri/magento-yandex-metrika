@@ -8,17 +8,17 @@
  * @author Boris Gribovskiy (boris.gribovskiy@cyberhull.com)
  */
 /**
- * Form container
+ * Form for post editing
  * 
  * @category Boangri
  * @package Boangri_YandexMetrika 
  */
 
-class Boangri_YandexMetrika_Block_Adminhtml_Form 
+class Boangri_YandexMetrika_Block_Adminhtml_EditForm 
     extends Mage_Adminhtml_Block_Widget_Form_Container
 {
     /**
-     * Construct
+     * Constructor
      */
     public function __construct()
     {
@@ -28,8 +28,8 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form
         $this->_blockGroup = 'weblog';
         $this->_controller = 'adminhtml_form';
          
-        $this->_updateButton('save', 'label', Mage::helper('weblog')->__('Save'));
-        /*
+        $this->_updateButton('update', 'label', Mage::helper('weblog')->__('Save'));
+        
         $this->_updateButton('delete', 'label', Mage::helper('weblog')->__('Delete'));
          
         $this->_addButton('saveandcontinue', array(
@@ -37,7 +37,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form
             'onclick'   => 'saveAndContinueEdit()',
             'class'     => 'save',
         ), -100);
-        */
+        
     }
     
     /**
@@ -47,6 +47,6 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form
      */
     public function getHeaderText()
     {
-        return Mage::helper('weblog')->__('Create new post');
+        return Mage::helper('weblog')->__('Edit post');
     }
 }
