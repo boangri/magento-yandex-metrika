@@ -14,7 +14,7 @@
  * @package Boangri_YandexMetrika 
  */
 
-class Boangri_YandexMetrika_Block_Adminhtml_Form 
+class Boangri_YandexMetrika_Block_Form 
     extends Mage_Adminhtml_Block_Widget_Form_Container
 {
     /**
