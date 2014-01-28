@@ -69,7 +69,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <Boangri_YandexMetrika after="Mage_Adminhtml">Boangri_YandexMetrika</Boangri_YandexMetrika>
+                        <Boangri_YandexMetrika before="Mage_Adminhtml">Boangri_YandexMetrika_Adminhtml</Boangri_YandexMetrika>
                     </modules>
                 </args>
             </adminhtml>

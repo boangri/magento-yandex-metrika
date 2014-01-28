@@ -25,7 +25,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Form
         $form = new Varien_Data_Form(array(
                         'id' => 'edit_form',
                         'action' => $this->getUrl('*/*/save', 
-                                array('id' => $this->getRequest()->getParam('blogpost_id'))),
+                                array('id' => $this->getRequest()->getParam('website_id'))),
                         'method' => 'post',
                         'enctype' => 'multipart/form-data'
                      )

@@ -14,7 +14,7 @@
  * @package Boangri_YandexMetrika 
  */
 
-class Boangri_YandexMetrika_YandexmetrikaController extends Mage_Adminhtml_Controller_action
+class Boangri_YandexMetrika_Adminhtml_YandexmetrikaController extends Mage_Adminhtml_Controller_action
 {
     /**
      * index action
@@ -38,17 +38,17 @@ class Boangri_YandexMetrika_YandexmetrikaController extends Mage_Adminhtml_Contr
      * edit action
      */
     public function editAction() {
-        //echo "here we are!";
+
         //$params = $this->getRequest()->getParams();
         $counter = Mage::getModel('boangri_yandexmetrika/counter');
-        //echo("Loading the blogpost with an ID of ".$params['id']);
+        //echo("Loading the blogpost with an ID of 1 ");
         $counter->load(1); //($params['id']);
         $data = $counter->getData();
         Mage::register('boangri_counter', $data);
         //var_dump($data);
         $this->loadLayout();
         $this->_addContent($this->getLayout()->createBlock('boangri_yandexmetrika/adminhtml_form'))
-             ->_addLeft($this->getLayout()->createBlock('boangri_yandexmetrika/adminhtml_form_edit'));   
+             ->_addLeft($this->getLayout()->createBlock('boangri_yandexmetrika/adminhtml_form_edit_tabs'));   
         $this->renderLayout();
     }
     

@@ -8,12 +8,12 @@
  * @author Boris Gribovskiy (boris.gribovskiy@cyberhull.com)
  */
 /**
- * Form for required parameters
+ * Form for optional parameters
  * 
  * @category Boangri
  * @package Boangri_YandexMetrika 
  */
-class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form 
+class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form2 
     extends Mage_Adminhtml_Block_Widget_Form
 {
     /**
@@ -23,25 +23,19 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
     protected function _prepareForm()
     {
         $data = Mage::registry('boangri_counter');
-        $id = isset($data['website_id']) ? $data['website_id'] : 1;
+        
         $form = new Varien_Data_Form();
         $this->setForm($form);
         $fieldset = $form->addFieldset('form_form', 
-                array('legend'=>Mage::helper('boangri_yandexmetrika')->__('Code of the counter')));
-        /*
+                array('legend'=>Mage::helper('boangri_yandexmetrika')->__('Enable counter')));
+/*        
         $fieldset->addField('title', 'text', array(
-            'label'     => Mage::helper('boangri_yandexmetrika')->__('Title'),
-            'class'     => 'required-entry',
-            'required'  => true,
-            'name'      => 'title',
-            'value'     => $data['title'],
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Title'),
+          'class'     => 'required-entry',
+          'required'  => true,
+          'name'      => 'title',
         ));
-        */
-        $fieldset->addField('hidden', 'hidden', array(
-            'name'      => 'id',
-            'value'     => $id ,
-        ));
-/*  
+  
         // Password 
         $fieldset->addField('password', 'password', array(
           'label'     => Mage::helper('boangri_yandexmetrika')->__('Password'),
@@ -88,39 +82,38 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
           'after_element_html' => '<small>Comments</small>',
           'tabindex' => 1
         ));
-*/
+
         // TextArea 
         $fieldset->addField('textarea', 'textarea', array(
-            'label'     => Mage::helper('boangri_yandexmetrika')->__('Code of the counter'),
-            'class'     => 'required-entry',
-            'required'  => true,
-            'name'      => 'content',
-            'value'     => $data['counter'],
-          //'onclick' => "",
-          //'onchange' => "",
-          //'value'  => '',
-          //'disabled' => false,
-          //'readonly' => false,
-          //'after_element_html' => '',
-          //'tabindex' => 1
-        ));
-/*
-        // Dropdown 
-        $fieldset->addField('select', 'select', array(
-          'label'     => Mage::helper('boangri_yandexmetrika')->__('Select'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Content Of Your Post'),
           'class'     => 'required-entry',
           'required'  => true,
           'name'      => 'title',
           'onclick' => "",
           'onchange' => "",
-          'value'  => '1',
-          'values' => array('-1'=>'Please Select..','1' => 'Option1','2' => 'Option2', '3' => 'Option3'),
+          'value'  => '',
           'disabled' => false,
           'readonly' => false,
-          'after_element_html' => '<small>Comments</small>',
+          'after_element_html' => '',
           'tabindex' => 1
         ));
-
+*/
+        // Dropdown 
+        $fieldset->addField('select', 'select', array(
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Select'),
+          'class'     => 'required-entry',
+          'required'  => false,
+          'name'      => 'status',
+          'onclick' => "",
+          'onchange' => "",
+          'value'  => $data['status'],
+          'values' => array('-1'=>'Please Select..','0' => 'Disable','1' => 'Enable'),
+          'disabled' => false,
+          'readonly' => false,
+          'after_element_html' => '<small></small>',
+          'tabindex' => 1
+        ));
+/*
         // Radio button 
         $fieldset->addField('radio', 'radio', array(
           'label'     => Mage::helper('boangri_yandexmetrika')->__('Radio'),
@@ -151,12 +144,12 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
           'after_element_html' => '<small>Comments</small>',
           'tabindex' => 1
         ));
-
+*/
         // Note 
         $fieldset->addField('note', 'note', array(
-          'text'     => Mage::helper('boangri_yandexmetrika')->__('Text Text'),
+          'text'     => Mage::helper('boangri_yandexmetrika')->__('This is an important notice'),
         ));
-
+/*
         // Link 
         $fieldset->addField('link', 'link', array(
           'label'     => Mage::helper('boangri_yandexmetrika')->__('Link'),
@@ -179,13 +172,13 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
         // File Upload 
         $fieldset->addField('file', 'file', array(
           'label'     => Mage::helper('boangri_yandexmetrika')->__('Upload'),
-          'value'  => 'Uplaod',
+          'value'  => 'Upload',
           'disabled' => false,
-          'readonly' => true,
-          'after_element_html' => '<small>Comments</small>',
+          'readonly' => false,
+          'after_element_html' => '',
           'tabindex' => 1
         ));
- * 
+
         // Date 
         $fieldset->addField('date', 'date', array(
           'label'     => Mage::helper('boangri_yandexmetrika')->__('Date'),
@@ -193,7 +186,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
           'tabindex' => 1,
           'image' => $this->getSkinUrl('images/grid-cal.gif'),
           'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
-          'name' => 'date'  
+          'name' => 'date'    
         ));
 
         // Checkbox 
@@ -224,7 +217,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tab_Form
           'disabled' => false,
           'after_element_html' => '<small>Comments</small>',
           'tabindex' => 1
-        ));        
+        ));       
         
         // Submit Button 
         $fieldset->addField('submit', 'submit', array(

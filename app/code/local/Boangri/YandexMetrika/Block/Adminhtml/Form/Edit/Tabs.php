@@ -11,7 +11,7 @@
  * Tabs widget
  * 
  * @category Boangri
- * @package Boangri_YandexMetrika
+ * @package Boangri_YandexMetrika 
  */
 
 class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tabs 
@@ -25,7 +25,7 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tabs
         parent::__construct();
         $this->setId('form_tabs');
         $this->setDestElementId('edit_form'); // this should be same as the form id define above
-        $this->setTitle(Mage::helper('boangri_yandexmetrika')->__('Post Information'));
+        $this->setTitle(Mage::helper('boangri_yandexmetrika')->__('Setup counter'));
     }
     
     /**
@@ -35,22 +35,20 @@ class Boangri_YandexMetrika_Block_Adminhtml_Form_Edit_Tabs
     protected function _beforeToHtml()
     {
         $this->addTab('form_section', array(
-          'label'     => Mage::helper('boangri_yandexmetrika')->__('Required data'),
-          'title'     => Mage::helper('boangri_yandexmetrika')->__('Required data'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Code'),
+          'title'     => Mage::helper('boangri_yandexmetrika')->__('Code'),
           'content'   => $this->getLayout()->createBlock('boangri_yandexmetrika/adminhtml_form_edit_tab_form')->toHtml(),
         ));
-      /*
+      
         $this->addTab('form_section2', array(
-          'label'     => Mage::helper('boangri_yandexmetrika')->__('Optional data'),
-          'title'     => Mage::helper('boangri_yandexmetrika')->__('Optional data'),
+          'label'     => Mage::helper('boangri_yandexmetrika')->__('Enable/Disable'),
+          'title'     => Mage::helper('boangri_yandexmetrika')->__('Enable/Disable'),
           'content'   => $this->getLayout()->createBlock('boangri_yandexmetrika/adminhtml_form_edit_tab_form2')->toHtml(),
         ));
-       * 
-       */
         // AJAX 
         
         //$this->addTab('form_section3', array(
-        //        'label'     => Mage::helper('weblog')->__('Item Information3'),
+        //        'label'     => Mage::helper('boangri_yandexmetrika')->__('Item Information3'),
         //        'url'       => $this->getUrl('*/*/form', array('_current' => true)),
         //        'class'     => 'ajax',
         //));

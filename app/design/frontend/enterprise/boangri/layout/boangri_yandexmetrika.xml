@@ -19,7 +19,7 @@
     <default>
         <reference name="before_body_end">
             <block type="boangri_yandexmetrika/counter"
-                name="boangri_yandexmetrika__counter"
+                name="boangri_yandexmetrika_counter"
                 template="boangri_yandexmetrika/index.phtml" />
         </reference> 
     </default>    
