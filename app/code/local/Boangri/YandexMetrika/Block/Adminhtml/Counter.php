@@ -13,7 +13,7 @@
  * @category Boangri
  * @package Boangri_YandexMetrika  
  */
-class Boangri_YandexMetrika_Block_Counter extends Mage_Core_Block_Template
+class Boangri_YandexMetrika_Block_Adminhtml_Counter extends Mage_Core_Block_Template
 {
     /**
      * YandexMetrika counter body
